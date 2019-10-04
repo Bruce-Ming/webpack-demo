@@ -1,3 +1,4 @@
+// koa2 自建服务器结合webpack打包
 const Koa = require('koa')
 const serve = require('koa-static')
 const webpack = require('webpack')
@@ -12,20 +13,20 @@ const port = process.env.PORT || 3000
 
 async function start() {
     // 在node中使用webpack
-  const compiler = webpack(config)
+  const compiler = webpack(config);
   try {
     const middleware = await koaWebpack({
       compiler
-    })
-    app.use(middleware)
-    app.use(serve(resolve(__dirname, '../dist')))
-    app.listen(port)
+    });
+    app.use(middleware);
+    app.use(serve(resolve(__dirname, '../dist')));
+    app.listen(port);
     console.log('服务器在localhost:'+port);
   } catch (e) {
     console.log(e)
   }
 }
-start()
+start();
 
 
 
