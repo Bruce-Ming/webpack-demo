@@ -42,8 +42,8 @@ const devConfig = {
     //用webpack-devserver建服务器
     devServer: {
         contentBase: './dist',
-        open: true,
-        port: 8000,
+        open: true, // 自动打开浏览器
+        port: 8000, // 端口
         hot: true,
         hotOnly: true
     },

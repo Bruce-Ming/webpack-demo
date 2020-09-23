@@ -45,7 +45,7 @@ module.exports = {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 8192
+                        limit: 8192 // 大于这个值时候打包成单独文件.小于时打包成base64文件
                     }
                 }]
             },
